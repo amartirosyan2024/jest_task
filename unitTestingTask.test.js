@@ -920,5 +920,11 @@ describe("unitTestingTask functionality", () => {
         expect(result).toBe("+04:00");
       });
     });
+    describe("format is divided by delimiters", () => {
+      it("should divide the result's formats by a divider in a format argument", () => {
+        const formats = unitTestingTask("YYYY/MM/D").split("/");
+        expect(formats).toHaveLength(3);
+      });
+    });
   });
 });

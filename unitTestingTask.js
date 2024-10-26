@@ -326,7 +326,7 @@
   register("ISODateTime", "YYYY-MM-ddThh:mm:ss");
   register("ISODateTimeTZ", "YYYY-MM-ddThh:mm:ssZ");
 
-  console.log(unitTestingTask("Z", new Date("2023-09-01T03:30:00")));
+  console.log(unitTestingTask("YYYY7MM7D", new Date("2023-09-01T03:30:00")));
 
   // conflict management — save link to previous content of unitTestingTask, whatever it was.
   var prevDate = root.unitTestingTask;
