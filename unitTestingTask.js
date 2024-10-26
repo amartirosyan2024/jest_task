@@ -162,7 +162,7 @@
    *  * **ZZ**: time-zone in ISO8601-compatible basic format (i.e. "-0400")
    *  * **Z**: time-zone in ISO8601-compatible extended format (i.e. "-04:00")
    *
-   *  Longer tokens take precedence over shorter ones (so "MM" will aways be "04", not "44" in april).
+   *  Longer tokens take precedence over shorter ones (so "MM" will always be "04", not "44" in april).
    *
    * @param {String} format
    * @param {Date|Number|String} [date=new Date()]
@@ -194,7 +194,7 @@
 
     format = format.toString();
 
-    if (unitTestingTask._formatters[format]) {
+    if (unitTestingTask._formatters?.[format]) {
       return unitTestingTask._formatters[format](dt);
     } else {
       return format.replace(regexp, function (match) {
@@ -325,6 +325,8 @@
   register("ISOTime", "hh:mm:ss");
   register("ISODateTime", "YYYY-MM-ddThh:mm:ss");
   register("ISODateTimeTZ", "YYYY-MM-ddThh:mm:ssZ");
+
+  console.log(unitTestingTask("Z", new Date("2023-09-01T03:30:00")));
 
   // conflict management — save link to previous content of unitTestingTask, whatever it was.
   var prevDate = root.unitTestingTask;
